@@ -1,23 +1,22 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
+import "./App.css";
+import Toggle from "./Toggle";
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <Container>
       <header className="App-header">
         <p>Toggling a simple useSpring animation</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Toggle />
       </header>
-    </div>
+    </Container>
   );
-}
+};
 
 export default App;
+
+const Container = styled(animated.div)`
+  text-align: center;
+`;
