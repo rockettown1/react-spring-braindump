@@ -1,12 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useSpring, animated } from "react-spring";
+import "./App.css";
+import styled from "styled-components";
 
-function App() {
+//NOTE animated is a wrapper for the components we want to animate.
+
+const App = () => {
+  //simple useSpring needs starting and ending values
+  const fade = useSpring({
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 1
+    }
+  });
   return (
-    <div className="App">
+    <Container style={fade}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -19,8 +30,12 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </Container>
   );
-}
+};
 
 export default App;
+
+const Container = styled(animated.div)`
+  text-align: center;
+`;
