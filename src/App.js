@@ -2,6 +2,7 @@ import React from "react";
 import { useSpring, animated } from "react-spring";
 import "./App.css";
 import styled from "styled-components";
+import Routes from "./Routes";
 
 //NOTE animated is a wrapper for the components we want to animate.
 
@@ -17,19 +18,8 @@ const App = () => {
   });
   return (
     <Container style={fade}>
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes />
+      <header className="App-header"></header>
     </Container>
   );
 };
