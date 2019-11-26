@@ -10,7 +10,9 @@ import Nav from "./Nav";
 const App = () => {
   const [navOpen, setNavOpen] = useState(false);
   const navAnimation = useSpring({
-    transform: navOpen ? "translate3d(0, 0, 0)" : "translate3d(100%, 0, 0)"
+    transform: navOpen
+      ? "translate3d(0, 0, 0) rotateZ(0)"
+      : "translate3d(100%, 0, 0) rotateZ(180deg)"
   });
 
   // from and to usually when you're animating components in after initial render.
